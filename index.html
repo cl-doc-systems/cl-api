@@ -1,0 +1,197 @@
+
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>API for EXAMPLE</title>
+<style type="text/css" media="all">
+body {margin: 0 2em .5em 2em;font-family: Verdana,Arial,sans-serif;}
+.package {background: #efefef; 
+          padding: 1.5em 0 1em 0; 
+          text-align: center; 
+          font-size: x-large;}
+.definition {background: #efefef; padding: .3em 1em;}
+a.symbolname, a:visited.symbolname {font-weight: bold;}
+.initargs {font-size: small;}
+.slots {font-size: small;}
+div.label {border-bottom: 1px solid #efefef; margin-bottom: .5em}
+.symboldecl, .footer {margin: 0 2em 2em 2em;}
+.symbolname {font-weight: bold; color: gray;}
+.symboltype {font-style: italic;margin-left: 1.5em; font-size: smaller;}
+.documentation {color: gray; font-family: Fixed,monospace;margin: 0 0 1.5em 0.5em;}
+.packagedocumentation {color: gray; 
+                       font-family: Fixed,monospace;
+                       margin: 0 0 1.5em 0; 
+                       border: 1px solid #efefef; 
+                       padding-left: 1.5em;}
+.symbolcomments span {font-weight: bold;}
+.footer {font-size: x-small; text-align: right; margin-top: 2em; padding-top: 1em; border-top: 1px solid gray;}
+.undocumented {color: red; font-weight: bold;}
+a, a:visited {font-weight: bold; color: gray; text-decoration: none; font-weight: normal;}
+a:hover {border-bottom: 1px solid gray; }
+.label {font-weight: bold; font-style: italic;color: gray;}
+.labeltitle {font-weight: bold; font-style: italic;color: gray; border: 1px solid #efefef; padding: .25em;margin-bottom: .5em}
+.frame {marin-top: 1.5em}
+.expander {border: 2px solid #efefef; color: gray; 
+           font-weight: bold; 
+           font-family: Fixed,monospace; 
+           margin-right: .25em; padding: 0 .25em;cursor: pointer;}
+</style>
+<script type="text/javascript">
+function expand (expander, id) {
+var text = expander.innerHTML;
+if (text == '-')
+{
+  expander.innerHTML = '+';
+  document.getElementById(id).style.display = 'none';
+}
+else
+{
+  expander.innerHTML = '-';
+  document.getElementById(id).style.display = '';
+}
+}</script></head>
+<body>
+<div class="package">
+<div class="definition">API for package: 
+<a class="symbolname" name="example_package" href="#example_package">example</a></div></div>
+<div class="packagedocumentation">
+<pre>
+
+This is a small library which includes a few functions with docstrings and a documentation
+for the system and all included packages.
+
+The purpose is to demonstrate core features of the
+CL-API (https://common-lisp.net/project/cl-api/) library.
+
+The repository can be used as a template for new libraries if you've choosen CL-API
+for documenting your library.
+
+</pre></div>
+<div class="frame">
+<div class="labeltitle">
+<span class="expander" onclick="expand(this, 'vars');">-</span>Variables</div>
+<div id="vars">
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="number-one_vars" href="#number-one_vars">number-one</a>: 
+<span class="value">((EXAMPLE::A EXAMPLE::B EXAMPLE::C))</span>
+<span class="symboltype">variable</span></div>
+<div class="documentation">
+<pre>UNDOCUMENTED</pre></div></div></div></div>
+<div class="frame">
+<div class="labeltitle">
+<span class="expander" onclick="expand(this, 'classes');">-</span>Classes</div>
+<div id="classes">
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="admin_class" href="#admin_class">admin</a>
+<span class="lambdalist">(user)</span>
+<span class="symboltype">class</span></div>
+<div class="documentation">
+<pre>Admins should have additional priveleges.</pre></div></div>
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="user_class" href="#user_class">user</a>
+<span class="lambdalist">(standard-object)</span>
+<span class="symboltype">class</span></div>
+<div class="documentation">
+<pre>All users in the system have this class.
+
+Last login slot is updated automatically.</pre></div>
+<div class="slots">
+<div class="label">SLOTS</div>
+<span class="symbolname">name</span> reader: 
+<span class="symbolname">name</span>
+<div class="documentation">
+<pre>A full username.</pre></div>
+<span class="symbolname">email</span> reader: 
+<span class="symbolname">email</span>
+<div class="documentation">
+<pre>Correct email address.</pre></div>
+<span class="symbolname">last-login-at</span> reader: 
+<span class="symbolname">last-login-at</span> writer: 
+<span class="symbolname">last-login-at</span>
+<div class="documentation">
+<pre>UNDOCUMENTED</pre></div></div></div></div></div>
+<div class="frame">
+<div class="labeltitle">
+<span class="expander" onclick="expand(this, 'functions');">-</span>Functions</div>
+<div id="functions">
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="defrule_func" href="#defrule_func">defrule</a>
+<span class="lambdalist">name &body body</span>
+<span class="symboltype">function</span></div>
+<div class="documentation">
+<pre>This is a fake macro just to see if documentation
+extractor is able to extract docs from custom forms.</pre></div></div>
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="do-the-job_func" href="#do-the-job_func">do-the-job</a>
+<span class="lambdalist">first second</span>
+<span class="symboltype">function</span></div>
+<div class="documentation">
+<pre>The function does the job.
+
+It *concatenates* first and second arguments
+calling internal function concat.
+
+On this multiline we'll check how does documentation
+system processes docstrings. It does not deindent
+subsequent lines and I have to shift them to the left
+in the code.</pre></div></div>
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="email_func" href="#email_func">email</a>
+<span class="lambdalist">object</span>
+<span class="symboltype">standard-generic-function</span></div>
+<div class="documentation">
+<pre>:undocumented</pre></div></div>
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="foo_func" href="#foo_func">foo</a>
+<span class="lambdalist">first &key (other 100500)</span>
+<span class="symboltype">function</span></div>
+<div class="documentation">
+<pre>This is example function.
+
+Internally it calls EXAMPLE:DO-THE-JOB)
+to do the real job.
+
+CL-API does not support any markup and you can
+put links into the docstrings.</pre></div></div>
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="last-login-at_func" href="#last-login-at_func">last-login-at</a>
+<span class="lambdalist">object</span>
+<span class="symboltype">standard-generic-function</span></div>
+<div class="documentation">
+<pre>:undocumented</pre></div></div>
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="(setf last-login-at)_func" href="#(setf last-login-at)_func">(setf last-login-at)</a>
+<span class="lambdalist">new-value object</span>
+<span class="symboltype">standard-generic-function</span></div>
+<div class="documentation">
+<pre>:undocumented</pre></div></div>
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="name_func" href="#name_func">name</a>
+<span class="lambdalist">object</span>
+<span class="symboltype">standard-generic-function</span></div>
+<div class="documentation">
+<pre>:undocumented</pre></div></div></div></div>
+<div class="frame">
+<div class="labeltitle">
+<span class="expander" onclick="expand(this, 'macros');">-</span>Macros</div>
+<div id="macros">
+<div class="symboldecl">
+<div class="definition">
+<a class="symbolname" name="defrule_macro" href="#defrule_macro">defrule</a>
+<span class="lambdalist">name &body body</span>
+<span class="symboltype">macro</span></div>
+<div class="documentation">
+<pre>This is a fake macro just to see if documentation
+extractor is able to extract docs from custom forms.</pre></div></div></div></div>
+<div class="footer">Generated by: 
+<a href="http://common-lisp.net/project/cl-api">CL-API</a></div></body></html>
